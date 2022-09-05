@@ -32,9 +32,11 @@ namespace VehicleRegistrationSystem
         //Private void method, for display details of vehicles
         private void DisplayVehiclesDetails(List<Vehicle> vehicles)
         {
+            Console.WriteLine("----------------------------------------------------------------------------------");
             foreach (var vehicle in vehicles)
             {
                 DisplayVehicleDetails(vehicle);
+                Console.WriteLine("----------------------------------------------------------------------------------");
             }
         }
 
@@ -49,7 +51,9 @@ namespace VehicleRegistrationSystem
             }
             else
             {
+                Console.WriteLine("----------------------------------------------------------------------------------");
                 DisplayVehicleDetails(vehicle);
+                Console.WriteLine("----------------------------------------------------------------------------------");
             }
         }
 
@@ -64,6 +68,11 @@ namespace VehicleRegistrationSystem
         {
             var matchingLastName = Vehicles.Where(v => v.OwnerLastName.Contains(searchPhrase)).ToList();
             DisplayVehiclesDetails(matchingLastName);
+        }
+
+        public void DeleteRecord()
+        {
+
         }
     }
 }
